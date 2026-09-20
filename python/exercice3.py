@@ -1,11 +1,14 @@
-Menu = {1:"Voir mes tâches", 2:"Ajouter une tâche", 3:"Supprimer une tâche", 4:"Quitter"}
-mesTaches = ["vide"]
+menu = {1:"Voir mes tâches", 2:"Ajouter une tâche", 3:"Supprimer une tâche", 4:"Quitter"}
+mesTaches = []
 while True:
+
+  for cle, valeur in menu.items():
+    print(f"{cle}. {valeur}")
   choixMenu = int(input("Choisissez: "))
 
   if choixMenu == 1:
-    for cle in mesTaches:
-      print(f"Tâche {mesTaches.index} : {cle}")
+    for cle, valeur in enumerate(mesTaches, start=1):
+      print(f"Tâche numéro {cle} : {valeur}")
 
   elif choixMenu == 2:
     while True:
@@ -17,15 +20,18 @@ while True:
 
   elif choixMenu == 3:
     while True:
-      for cle in mesTaches:
-        print(f"Tâche {mesTaches.index(cle)} : {cle}")
-      supprimer = int(input("ecrivez le numéro de tâche à supprimer ou tappez <quitter> pour sortir: "))
-      if supprimer == "quitter":
-        break
-      elif supprimer>len(mesTaches):
-        print("veillez choisir un bon numéro de tâche")
+      for cle, valeur in enumerate(mesTaches, start=1):
+        print(f"Tâche numéro {cle} : {valeur}")
+      supprimer = int(input("ecrivez le numéro de tâche à supprimer ou tappez <0> pour sortir: "))
 
-      mesTaches.pop(supprimer)
+      if not mesTaches:
+        print("la liste des taches est vide")
+      elif supprimer>len(mesTaches) or supprimer<0:
+        print("veillez choisir un bon numéro de tâche")
+      elif supprimer == 0:
+        break
+      else:
+        mesTaches.pop(supprimer-1)
 
   elif choixMenu == 4:
     break
