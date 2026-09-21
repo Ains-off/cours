@@ -1,0 +1,29 @@
+{
+    "patisseries": [
+        {
+            "name": "Brioche à la cannelle ou Kanelbulle",
+            "price": "1,75 € / unité",
+            "image": "/assets/images/brioche-cannelle.jpg"
+        },
+        {
+            "name": "Lunettes fraise ou abricot",
+            "price": "1,5 € / unité",
+            "image": "/assets/images/lunettes.jpg"
+        },
+        {
+            "name": "Macarons (plusieurs goûts)",
+            "price": "20 € / la douzaine",
+            "image": "/assets/images/macarons.jpg"
+        },
+        {
+            "name": "Opéra au thé matcha",
+            "price": "4.5 € / la part",
+            "image": "/assets/images/opera-the-matcha.jpg"
+        },
+        {
+            "name": "Financiers",
+            "price": "5 € / la demi-douzaine",
+            "image": "/assets/images/financiers.jpg"
+        }
+    ]
+}
