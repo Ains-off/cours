@@ -1,0 +1,17 @@
+{
+  "name": "tp-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite build && vite preview"
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-nunjucks": "^2.0.1",
+    "vite": "latest",
+    "vituum": "^2.0.2"
+  }
+}
