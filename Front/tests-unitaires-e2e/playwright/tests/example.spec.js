@@ -8,4 +8,5 @@ const __dirname = path.dirname(__filename);
 
 test('Should visit one news on university\'s website', async ({ page }) => {
   await page.goto('https://www.cyu.fr/');
+  await page.click('text=Actualités');
 });

@@ -1,19 +1,15 @@
 // @ts-check
-import { test, expect } from '@playwright/test';
+import path from "path"
+import { test, expect } from "@playwright/test";
+import { fileURLToPath } from "url";
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+test('Should visit one news on university\'s website', async ({ page }) => {
+  await page.goto('https://www.cyu.fr/');
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  const premierLienActu = page.locator('.actusAutres__liste a').first();
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  await expect(page).toHaveURL(/\/actualites\//);
 });
