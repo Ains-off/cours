@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tests end-to-end — Consignes TP</title>
+        <link
+            rel="stylesheet"
+            href="https://danyellow.net/cours-mmi/consignes.css"
+        />
+
+        <script src="https://danyellow.net/cours-mmi/consignes.js" defer></script>
+        <link rel="icon" type="image/png" href="https://danyellow.net/cours-mmi/favicon.png" />
+    </head>
+
+    <body>
+        <header class="consignes-en-tete">
+            <h1 class="titre-consignes">
+                Tests end-to-end — Consignes TP
+            </h1>
+            <details class="consignes-conteneur" open>
+                <summary>
+                    <p class="h1">
+                        Partie 1 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <li>
+                        Ouvrez dans la console (Terminal / iTerm2 sur MacOS ou
+                        git bash sur Windows) le dossier ressources/playwright et
+                        installez les dépendances avec la commande
+                        <code>npm install</code>
+                        <p class="note-information">S'il vous manque certains navigateurs, vous devrez installer leur version exécutable. Par exemple pour Chromium, il faut utiliser la commande <code>npx playwright install chromium</code>. Playwright ne se lancera pas et vous l'indiquera dans le terminal en tous les cas.</p>
+                    </li>
+                    <li>
+                        Ouvrez playwright en exécutant la commande
+                        <code>npm run e2e</code> ou
+                        <code>npm run playwright</code> dans la console
+                    </li>
+                    <li>
+                        Cliquez sur un des icônes "play" de la fenêtre de
+                        Playwright pour exécuter votre premier test e2e
+                    </li>
+                </ol>
+                <p class="note-information">
+                    Le projet que vous avez récupéré possède Playwright ôté de certains fichiers et déjà configuré, notamment pour l'utilisation de modules javascript. Dans une configuration standard, Playwright crée plus de fichiers et dossiers.
+                </p>
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 2 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <li>
+                        Améliorez le test contenu dans "tests/example.spec.js"
+                        pour cliquer sur la première actualité (zone
+                        "actualités") de la page d'accueil
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://playwright.dev/docs/api/class-locator#locator-click"
+                                    target="_blank"
+                                    >Accéder à la documentation de .click() - ouverture dans un nouvel onglet</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Vérifiez que vous êtes bien arrivé sur la page d'une
+                        actualité en utilisation une assertion. Vous avez deux solutions pour cette assertion.
+                        <ol>
+                            <li>
+                                Récupérer la valeur de l'attribut "href" de la balise &lt;a> avec la méthode <code>.getAttribute()</code> et tester l'url avec la méthode <code>.toHaveURL()</code>
+                            </li>
+                            <li>
+                                Les liens d'actualité contiennent
+                                "universite/media-et-communication/actualites", testez si l'url courante contient bien cette
+                                partie grâce à la méthode
+                                <code>.toHaveURL()</code>. Elle accepte une RegEx en paramètre
+                            </li>
+                        </ol>
+                        <section class="note-information">
+                            <ul>
+                                <li>
+                                    <a
+                                href="https://playwright.dev/docs/next/api/class-pageassertions#page-assertions-to-have-url"
+                                target="_blank"
+                                >Accéder à la documentation de
+                                .toHaveURL() - ouverture dans un nouvel onglet</a
+                            >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://playwright.dev/docs/next/api/class-locator#locator-get-attribute"
+                                        target="_blank"
+                                        >Accéder à la documentation de
+                                        .getAttribute() - ouverture dans un nouvel onglet</a
+                                    >
+                                </li>
+                            </ul>
+                        </section>
+
+                    </li>
+                </ol>
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 3 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ul class="liste-consignes">
+                    <li>
+                        Ajoutez un nouveau test (fichier de test ou bloc de
+                        test) qui respecte le plan suivant :
+                        <ol>
+                            <li>
+                                Accède au site wikipédia (<a
+                                    href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal"
+                                    target="_blank"
+                                    >https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal</a
+                                >)
+                            </li>
+                            <li>
+                                Effectue une recherche de votre choix en
+                                écrivant dans le champ de recherche, il faut
+                                utiliser la méthode <code>fill()</code>
+                            </li>
+                            <li>
+                                S'assure que vous êtes sur la page de votre
+                                recherche
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                <section class="note-information">
+                    <ul>
+                        <li>
+                            <a
+                                href="https://playwright.dev/docs/api/class-locator#locator-fill"
+                                target="_blank"
+                                >Accéder à la documentation de locator.fill()
+                                - ouverture dans un nouvel onglet</a
+                            >
+                        </li>
+                    </ul>
+                </section>
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 4 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <!-- <li>
+                        Ouvrez dans la console (Terminal / iTerm2 sur MacOS ou
+                        git bash sur Windows) le dossier ressources/playwright
+                        (nouvelle fenêtre ou onglet de votre terminal)
+                    </li>
+                    <li>Exécutez la commande <code>npm run server</code></li> -->
+                    <li>
+                        Ajoutez un nouveau fichier de test, dans le dossier dédié, avec le test qui
+                        respecte le plan suivant :
+                        <ol>
+                            <li>Accède à "http://localhost:3000"
+                                <p class="note-information">Cette url est déjà définie dans la configuration de Playwright. Libre à vous d'utiliser "/" ou "http://localhost:3000" dans vos tests.</p>
+                            </li>
+                            <li>Remplit le formulaire</li>
+                            <li>
+                                Vérifie que le formulaire a été soumis
+                                <ul>
+                                    <li>
+                                        Pensez à tester / découvrir le
+                                        formulaire manuellement avant d'écrire
+                                        vos tests
+                                    </li>
+                                    <li>
+                                        Note : Il existe plusieurs moyens de
+                                        savoir que le formulaire a été soumis
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+                <section class="note-information">
+                    <p>
+                        Pour manipuler un &lt;select>, il faudra utiliser la
+                        méthode ".selectOption()"
+                    </p>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://playwright.dev/docs/input#select-options"
+                                target="_blank"
+                                >Accéder à la documentation de .selectOption() - ouverture dans un nouvel onglet</a
+                            >
+                        </li>
+                    </ul>
+                </section>
+                <p class="note-information">Note : Playwright permet d'exécuter une commande avant que l'outil se lance. Dans le fichier de configuration, nous avons la clé "webServer" avec laquelle nous lançons la commande <code>npm run server</code> qui exécute un serveur node sur le port 3000. Nous aurions pu également faire le choix de lancer cette commande dans un autre terminal en plus de la commande qui lance les tests.</p>
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 5 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <li>
+                        Réécrivez le test de la partie 4 en utilisant le sélecteur "data-testid" sur les éléments manipulés
+                    </li>
+                    <li>
+                        Dans le fichier src/script.js, remplacez les sélecteurs
+                        de balises par des data-attributes personnalisés. Il n'est pas nécéssaire d'utiliser le data-attribute "testid". Mais par convention, c'est "data-testid" qui est utilisé
+                    </li>
+                </ol>
+                <section class="note-information">
+                    <p>
+                        Pour soumettre un formulaire, vous pouvez cliquer sur le
+                        bouton dédié ou appuyer sur la touche <kbd>Entrée</kbd> dans un champ de texte grâce à la méthode press().
+                    </p>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://playwright.dev/docs/api/class-locator#locator-press"
+                                target="_blank"
+                                >Accéder à la documentation de press() - ouverture dans un nouvel onglet</a
+                            >
+                        </li>
+                    </ul>
+                </section>
+            </details>
+
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 6 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <li>
+                        Ajoutez un nouveau champ de type "file" dans le
+                        formulaire contenu dans le fichier src/form.html avec le
+                        libellé de votre choix tout comme son emplacement dans le formulaire. Ce
+                        champ est facultatif et doit permettre d'uploader une
+                        image uniquement.
+                    </li>
+                    <li>
+                        Mettez à jour vos tests (des parties 4 et 5) pour
+                        prendre en compte ces modifications
+                    </li>
+                    <li>
+                        Ajoutez un autre test pour vous assurer que le
+                        formulaire est bien réinitialisé avec le bouton
+                        "rechoisir"
+                    </li>
+                </ol>
+                <section class="note-information">
+                    <p>
+                        N'oubliez pas que le chemin de l'image est relatif à la racine du projet pour la méthode <a href="https://playwright.dev/docs/api/class-locator#locator-set-input-files" target="_blank">.setInputFiles()</a>
+                    </p>
+                </section>
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 7 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <li>
+                        Affichez le contenu de l'API qui se trouve à "http://localhost:3000/api" sur le site de façon asynchrone. Elle retourne la liste des projets jours fériés
+                        <ul>
+                            <li>Préférez l'utilisation de la balise &lt;template>
+                                <ul>
+                                    <li>
+                                        <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/template" target="_blank" rel="noopener noreferrer">Voir documentation de la balise &lt;template></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Créez un test e2e permettant de vérifier le bon affichage de votre liste de jours féries
+                        <ul>
+                            <li>
+                                Vous devez mocker/simuler la réponse d'API
+                                <ul>
+                                    <li>
+                                        <a href="https://playwright.dev/docs/mock" target="_blank" rel="noopener noreferrer">Voir documentation de la simulation d'API</a>
+                                        <p class="note-attention">Le mock de vos API doit être avant le chargement de votre page, c'est la première instruction de votre test</p>
+                                    </li>
+                                </ul>
+                                <section class="note-information">
+                                    <p>L'API est lente. Il faudra penser à utiliser la méthode waitForResponse.</p>
+                                    <ul>
+                                        <li><a href="https://playwright.dev/docs/api/class-page#page-wait-for-response" target="_blank">Accéder à la documentation de waitForResponse - ouverture dans un nouvel onglet</a></li>
+                                    </ul>
+                                </section>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 8 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <li>
+                        Faites une capture d'écran de n'importe quel site durant
+                        un test
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://playwright.dev/docs/api/class-page#page-screenshot"
+                                    target="_blank"
+                                    >Accéder à la documentation de
+                                    screenshot() - ouverture dans un nouvel onglet</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Prenez une capture d'écran mobile, tablette et PC du
+                        site de l'université (<a href="https://www.cyu.fr/" target="_blank" rel="noopener noreferrer">https://www.cyu.fr/</a>). Si vous le
+                        souhaitez, vous pouvez également gérer l'orientation de
+                        l'écran
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://playwright.dev/docs/api/class-page#page-set-viewport-size"
+                                    target="_blank"
+                                    >Accéder à la documentation de setViewportSize() - ouverture dans un nouvel onglet</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Faites une capture d'écran durant un test sur le site de
+                        l'université (<a href="https://www.cyu.fr/" target="_blank" rel="noopener noreferrer">https://www.cyu.fr/</a>)
+                        <span class="texte-gras"
+                            >sans que l'encart des
+                            cookies n'apparaisse</span
+                        >
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://playwright.dev/docs/api/class-page#page-evaluate"
+                                    target="_blank"
+                                    >Accéder à la documentation de evaluate() - ouverture dans un nouvel onglet</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="note-information">
+                    <p>
+                        Voici un exemple d'utilisation de la méthode
+                        <code>evaluate()</code> :
+                    </p>
+                    <pre data-code-sample='{"allowCopy": true, "title": "Exemple dissimulation élément"}' style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(255, 123, 114); font-weight: 400;">await</span> page.<span style="color: rgb(210, 168, 255); font-weight: 400;">locator</span>(<span style="color: rgb(165, 214, 255); font-weight: 400;">"input"</span>).<span style="color: rgb(210, 168, 255); font-weight: 400;">nth</span>(<span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>).evaluate(<span style="color: rgb(201, 209, 217); font-weight: 400;">(<span style="color: rgb(201, 209, 217); font-weight: 400;">item</span>) =&gt;</span> {
+    item.<span style="color: rgb(201, 209, 217); font-weight: 400;">style</span>.<span style="color: rgb(201, 209, 217); font-weight: 400;">display</span> = <span style="color: rgb(165, 214, 255); font-weight: 400;">"none"</span>;
+});</pre>
+                </div>
+                    </li>
+                    <li>
+                        Réutilisez le site qui tourne sur le port 3000 et créez un cookie en javascript lorsque le formulaire est validé et
+                        vérifiez sa présence grâce à playwright
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://playwright.dev/docs/api/class-browsercontext#browser-context-cookies"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Voir documentation de cookies dans
+                                    playwright (ouverture dans un nouvel onglet)</a
+                                >
+                                <p class="note-information">
+                                    Notez bien que la méthode cookies() retourne un tableau d'objets, pour évaluer un cookie, il faudra filtrer ce tableau. Exemple : <code>listCookies.find(item => item.name === "my_cookie").value</code>. Par ailleurs, les cookies sont contenus dans l'objet "context" ou la méthode <code>context().cookies()</code> de l'objet page.
+                                </p>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie#write_a_new_cookie"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Voir documentation de document.cookie en
+                                    javascript (ouverture dans un nouvel
+                                    onglet)</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Partie 9 (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <ol class="liste-consignes">
+                    <li>
+                        Utilisez la commande <code>npx playwright codegen (ou "open")</code>
+                        <p class="note-information">La commande ouvre Chromium par défaut. Néanmoins, vous pouvez choisir votre navigateur en remplaçant codegen (ou "open") par "ff", "cc" ou encore "wk".</p>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://playwright.dev/docs/codegen-intro"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Voir documentation de codegen (ouveture dans un nouvel
+                                    onglet)</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Entrez l'adresse d'un site dans le navigateur qui s'est ouvert suite à la commande précédente
+                        <p class="note-information">Au lieu d'entrer dans le navigateur l'url du site, vous pouvez passer en paramètre cette url dans la commande. Ex : <code>npx playwright codegen (ou "open") url-du-site.com</code>. Ce qui ouvrira directement le navigateur avec cette url.</p>
+                    </li>
+                    <li>
+                        Enregistez des commandes d'actions dans le but de générer un test
+                        <p class="note-information">Aussi pratique soit-il codegen ne peut pas tout. Il faudra certainement retoucher vos tests dans vos fichiers.</p>
+                    </li>
+                    <li>
+                        Exécutez ce test via Playwright
+                    </li>
+                </ol>
+                <p class="note-information">
+                    Il est possible de lister tous les paramètres possibles de la commande npx playwright codegen (ou "open") en ajoutant le paramètre "-h" ou "--help".
+                </p>
+            </details>
+            <details class="consignes-conteneur">
+                <summary>
+                    <p class="h1">
+                        Pour aller plus loin (cliquer pour afficher / cacher)
+                    </p>
+                </summary>
+                <div>
+                    <ul>
+                        <li>Générez un fichier JSON à partir des résultats (plusieurs pages) d'un site de votre choix. Chaque entrée du fichier JSON doit contenir plusieurs clés dépendamment du site choisi
+                            <div class="note-attention">
+                                <p>A noter que pour éviter d'être banni du site scrapé, il est conseillé de temporiser ses actions enrte chaque page. Effectuez un délai entre chaque changement de page via un sleep comme le code suivant :
+                                    <code style="font-family:monospace;color: rgb(248, 248, 242); background-color: rgb(0, 0, 0); font-weight: 400; "><span style="color: rgb(220, 198, 224); font-weight: 400;">await</span> <span style="color: rgb(220, 198, 224); font-weight: 400;">new</span> <span style="color: rgb(0, 224, 224); font-weight: 400;">Promise</span>(<span style="color: rgb(248, 248, 242); font-weight: 400;"><span style="color: rgb(245, 171, 53); font-weight: 400;">r</span> =&gt;</span> <span style="color: rgb(245, 171, 53); font-weight: 400;">setTimeout</span>(r, <span style="color: rgb(0, 224, 224); font-weight: 400;">Math</span>.<span style="color: rgb(0, 224, 224); font-weight: 400;">floor</span>(<span style="color: rgb(0, 224, 224); font-weight: 400;">Math</span>.<span style="color: rgb(0, 224, 224); font-weight: 400;">random</span>() * <span style="color: rgb(245, 171, 53); font-weight: 400;">3500</span>) + <span style="color: rgb(245, 171, 53); font-weight: 400;">2000</span>));</code>
+                                    </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="note-information">
+                        <p>Pour créer votre fichier JSON, il faudra utiliser l'API fs de nodejs et sa fonction writeFile().</p>
+                        <ul>
+                            <li>
+                                <a href="https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs" target="_blank" rel="noopener noreferrer">Accéder à la documentation de fs — ouverture dans un nouvel onglet</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+        </header>
+    </body>
+</html>
